@@ -10,10 +10,10 @@ ________________________________________________________________________________
 But du Jeu
 Le joueur débute sur une zone hostile, son but est de faire évoluer l’environnement pour crée un écosystème et attiré une faune. Chaque action coûte de l’énergie primaire (une seule énergie limitée pour toute les actions) qu’il faut utiliser de manière réfléchie afin d’optimiser les zones habitables. La faune apparait lorsque toute les conditions sont réunis (condition différentes pour chaque espèces) et permet de régénérer l’énergie pour continuer. Un % représente la réussite du joueur, chaque évolution ou animal en plus le fait augmenter, 100% est atteint lorsqu’il y a toutes les espèces d’animaux.
 Inspirations :
-•	Terra Nil : https://www.youtube.com/watch?v=vqYpaVoiymo
-•	World box
-•	Jeu de la vie ( pour les évolutions du jeu )
-•	Jeux en vue isométrique : Terra Nil, Dofus (sans changement de map)
+- Terra Nil : https://www.youtube.com/watch?v=vqYpaVoiymo
+- World box
+- Jeu de la vie ( pour les évolutions du jeu )
+- Jeux en vue isométrique : Terra Nil, Dofus (sans changement de map)
 ________________________________________________________________________________
 Aspect techniques
 -	Energie primaire limitée qui se régénère grâce à la faune
