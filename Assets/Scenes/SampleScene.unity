@@ -325,13 +325,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tilemap: {fileID: 267286707}
-  tilesToPlace:
-  - tile: {fileID: 11400000, guid: 4e155565a501a184f9d119ba532632a4, type: 2}
-    type: 0
-  - tile: {fileID: 11400000, guid: 0db9444a9eb9a5b4f9b707e467378606, type: 2}
-    type: 1
-  - tile: {fileID: 11400000, guid: a3133543ae772a641a493897b0137de6, type: 2}
-    type: 2
+  evolutionStages:
+  - type: 0
+    stages:
+    - {fileID: 11400000, guid: 1241298431c9d474caf25e42f7f9e1c5, type: 2}
+    - {fileID: 11400000, guid: 4e155565a501a184f9d119ba532632a4, type: 2}
+  - type: 1
+    stages:
+    - {fileID: 11400000, guid: 0db9444a9eb9a5b4f9b707e467378606, type: 2}
+  - type: 2
+    stages:
+    - {fileID: 11400000, guid: a3133543ae772a641a493897b0137de6, type: 2}
   width: 10
   height: 10
 --- !u!1 &519420028
@@ -564,9 +568,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cursor: {fileID: 1416293218}
-  overlayTilePrefab: {fileID: 34610707929490202, guid: 3a3768b017c1c394a8f7f0906e83b812, type: 3}
+  overlayTilePrefab: {fileID: 5183079258145444095, guid: 16b74ed02b8427841bffffcadebea6e9, type: 3}
   overlayContainer: {fileID: 1143843710}
   tilemap: {fileID: 267286707}
+  mapManager: {fileID: 352925536}
+  ClickDuration: 2
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
