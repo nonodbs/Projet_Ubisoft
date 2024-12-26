@@ -38,11 +38,10 @@ Solution : bon équilibre de la ressource primaire pour que se soit jouable tout
 Solution : mettre en place un système de vie de l’écosystème : si 3 cases du même type : la 4 -ème dévient de ce type : jeu de la vie), l’eau peut faire évoluer les cases voisines
 ________________________________________________________________________________
 Étapes 
--	Génération de la map automatique simple
-o	Deux versions faite : une en créant une Tilemap avec une palette, l’autre en créant des games objects. Deuxième version me permet de plus facilement géré les cases mais la première semble plus optimisé.
--	Mise en place de la sélection de cases (plus simple avec des games objects)
+-	Génération de la map automatique simple (random) OK
+-	Mise en place de la sélection de cases OK
 -	UI (avec gestion de la ressources et % de réussite)
--	Mise en place du bouton pour évoluer les cases
+-	Mise en place du bouton pour évoluer les cases OK
 -	Gestion des zones
 -	Spawn des animaux
 Évolution en +
