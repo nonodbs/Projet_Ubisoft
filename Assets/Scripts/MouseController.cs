@@ -8,16 +8,12 @@ public class MouseController : MonoBehaviour
     public Camera mainCamera;
     public Vector3 mapBoundsMin;
     public Vector3 mapBoundsMax;
-    public float edgeThreshold = 50f;
-    public float smoothTime = 0.1f;
-
-
-
 
     public GameObject cursorPrefab;
     public GameObject overlayTilePrefab;
     public Transform overlayContainer;
     public Tilemap tilemap;
+    public UIManager uimanager;
     public MapManager mapManager;
     public Image INwait;
 
@@ -41,7 +37,7 @@ public class MouseController : MonoBehaviour
 
     void Update()
     {
-        if (mapManager.ispause)
+        if (uimanager.ispause)
         {
             return;
         }

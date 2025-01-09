@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -18,8 +19,18 @@ public class MySceneManager : MonoBehaviour
 
     public void StartLevel()
     {
-        PlayerPrefs.SetInt("Height", int.Parse(Inputheight.text));
-        PlayerPrefs.SetInt("Width", int.Parse(Inputwidth.text));
+        if (!int.TryParse(Inputheight.text, out height) || height < 10 || height > 100)
+        {
+            height = 10;
+        }
+
+        if (!int.TryParse(Inputwidth.text, out width) || width < 10 || width > 100)
+        {
+            width = 10;
+        }
+
+        PlayerPrefs.SetInt("Height", height);
+        PlayerPrefs.SetInt("Width", width);
         difficulty = difficultyDropdown.options[difficultyDropdown.value].text;
         PlayerPrefs.SetString("difficulty", difficulty);
         SceneManager.LoadScene("MainLevel");
@@ -27,7 +38,11 @@ public class MySceneManager : MonoBehaviour
 
     public void QuitGame()
     {
+        #if UNITY_EDITOR
         UnityEditor.EditorApplication.isPlaying = false;
+        #else
+        Application.Quit();
+        #endif
     }
 
     public void OnHeightChanged()

@@ -2,7 +2,6 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Tilemaps;
 using CellStateSpace;
-using UnityEngine.SceneManagement;
 
 public enum TileType
 {
@@ -39,8 +38,8 @@ namespace CellStateSpace
 public class MapManager : MonoBehaviour
 {
     public ZoneManager zoneManager;
-    public GameObject menuPanel;
-    //public MySceneManager mySceneManager;
+    public UIManager uimanager;
+
     public Tilemap tilemap;
     public List<Evolutions> evolutionStages;
 
@@ -50,8 +49,6 @@ public class MapManager : MonoBehaviour
     private string difficulty;
     private bool peaceful = false;
     private int Energy = 0;
-
-    public bool ispause = false;
 
     //Dictionnaire pour stoker l'état de chaque tile (type, évolution)
     private Dictionary<Vector3Int, CellState> mapState = new Dictionary<Vector3Int, CellState>();
@@ -79,43 +76,12 @@ public class MapManager : MonoBehaviour
         }
     }
 
-    void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.Escape))
-        {
-            if (menuPanel != null)
-            {
-                menuPanel.SetActive(!menuPanel.activeSelf);
-                ispause = true;
-            }
-        }
-    }
-
-    public void Replay()
-    {
-        if (menuPanel != null)
-        {
-            menuPanel.SetActive(!menuPanel.activeSelf);
-            ispause = false;
-        }
-    }
-
-    public void QuitGame()
-    {
-        UnityEditor.EditorApplication.isPlaying = false;
-    }
-
-    public void Mainmenu()
-    {
-        SceneManager.LoadScene("MainMenu");
-        ispause = false;
-    }
-
     void GenerateMap()
     {
         //Genere une map (pour le moment uniquement en terre)
         int height = PlayerPrefs.GetInt("Height", 10);
         int width = PlayerPrefs.GetInt("Width", 10);
+        
         for (int x = 0; x < width; x++)
         {
             for (int y = 0; y < height; y++)
@@ -155,10 +121,10 @@ public class MapManager : MonoBehaviour
         if (mapState.ContainsKey(pos))
         {
             CellState state = mapState[pos];
-            TileBase wat = GetTileFromEvolution(TileType.Water, 0);
+            TileBase wat = GetTileFromEvolution(TileType.Water, 1);
             if (wat != null)
             {
-                state.evol = 0;
+                state.evol = 1;
                 state.type = TileType.Water;
                 tilemap.SetTile(pos, wat);
                 SubEnergy(5);
@@ -230,6 +196,7 @@ public class MapManager : MonoBehaviour
             if (Energy <= 0)
             {
                 //mort du joueur
+                uimanager.lost(); 
             }
         }
     }
