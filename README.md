@@ -15,7 +15,8 @@ Inspirations :
 
 ________________________________________________________________________________
 
-Mécanique de jeu :
+Comment jouer :
+- télécharger le dossier V1 (au complet), et lancer l'application "Mygame"
 - bouton gauche de la souris : cliquer sur les boutons, selection des cases, déselection des cases
 - espace (clic court) : fait évoluer les cases sélectionnées
 - espace (clic long) : change les cases selectionnées en eau
