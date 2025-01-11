@@ -46,9 +46,8 @@ Version 1 :
 -	Gestion simple de la caméra
 -	Création de l'esthétique des cases
 
-<video src="Vidéo/08012025_V1.mp4">
-  Your browser does not support the video tag.
-</video>
+[Télécharger la vidéo](Vidéo/08012025_V1.mp4)
+
 ________________________________________________________________________________
 
 Évolutions future :
