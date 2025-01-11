@@ -46,7 +46,7 @@ Version 1 :
 -	Gestion simple de la caméra
 -	Création de l'esthétique des cases
 
-[Télécharger la vidéo](Vidéo/08012025_V1.mp4)
+[[Regarder la vidéo]](https://youtu.be/IYLDS3Nol-0)
 
 ________________________________________________________________________________
 
