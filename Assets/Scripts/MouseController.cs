@@ -5,6 +5,7 @@ using UnityEngine.UI;
 
 public class MouseController : MonoBehaviour
 {
+    // gestion des actions de la souris
     public Camera mainCamera;
     public Vector3 mapBoundsMin;
     public Vector3 mapBoundsMax;
@@ -12,9 +13,8 @@ public class MouseController : MonoBehaviour
     public GameObject cursorPrefab;
     public GameObject overlayTilePrefab;
     public Transform overlayContainer;
-    public Tilemap tilemap;
     public UIManager uimanager;
-    public MapManager mapManager;
+    public EvolutionManager evolutionManager;
     public Image INwait;
 
     public float ClickDuration = 2;
@@ -31,8 +31,8 @@ public class MouseController : MonoBehaviour
             cursorInstance = Instantiate(cursorPrefab);
             cursorInstance.name = "CursorInstance";
         }
-        mapBoundsMin = tilemap.localBounds.min;
-        mapBoundsMax = tilemap.localBounds.max;
+        mapBoundsMin = InfoManager.Instance.tilemap.localBounds.min;
+        mapBoundsMax = InfoManager.Instance.tilemap.localBounds.max;
     }
 
     void Update()
@@ -47,9 +47,9 @@ public class MouseController : MonoBehaviour
             Vector3 mouseWorldPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
             mouseWorldPosition.z = 0.1f;
 
-            Vector3Int tilePos = tilemap.WorldToCell(mouseWorldPosition);
-            TileBase tile = tilemap.GetTile(tilePos);
-            Vector3 newPos = tilemap.GetCellCenterWorld(tilePos);
+            Vector3Int tilePos = InfoManager.Instance.tilemap.WorldToCell(mouseWorldPosition);
+            TileBase tile = InfoManager.Instance.tilemap.GetTile(tilePos);
+            Vector3 newPos = InfoManager.Instance.tilemap.GetCellCenterWorld(tilePos);
 
             if (tile != null)
             {
@@ -114,7 +114,7 @@ public class MouseController : MonoBehaviour
             {
                 GameObject overlayTile = Instantiate(overlayTilePrefab, overlayContainer);
                 overlayTile.name = overlayName;
-                Vector3 cellWorldPosition = tilemap.GetCellCenterWorld(tilePos);
+                Vector3 cellWorldPosition = InfoManager.Instance.tilemap.GetCellCenterWorld(tilePos);
                 Vector3 offset = new Vector3(0, 0.1f, 0);
                 cellWorldPosition = cellWorldPosition + offset;
                 overlayTile.transform.position = new Vector3(cellWorldPosition.x, cellWorldPosition.y, 1);
@@ -134,7 +134,7 @@ public class MouseController : MonoBehaviour
         //fait évolué les tiles
         foreach (var tilePos in selectedTiles)
         {
-            mapManager.EvolveTile(tilePos);
+            evolutionManager.EvolveTile(tilePos);
         }
 
         selectedTiles.Clear();
@@ -145,7 +145,7 @@ public class MouseController : MonoBehaviour
         //chage les tiles en eau
         foreach (var tilePos in selectedTiles)
         {
-            mapManager.SetTileToWater(tilePos);
+            evolutionManager.ChangeTileToWater(tilePos);
         }
 
         selectedTiles.Clear();

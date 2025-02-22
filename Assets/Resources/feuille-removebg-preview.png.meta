@@ -1,0 +1,468 @@
+fileFormatVersion: 2
+guid: 70a8005d0b1381a44b897d1f664baf41
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -7684963799045064861
+    second: feuille-removebg-preview_0
+  - first:
+      213: -5141474519016775097
+    second: feuille-removebg-preview_1
+  - first:
+      213: -5368921454802436814
+    second: feuille-removebg-preview_2
+  - first:
+      213: -2281815461595593642
+    second: feuille-removebg-preview_3
+  - first:
+      213: -5710852471220784508
+    second: feuille-removebg-preview_4
+  - first:
+      213: -7625425857526501485
+    second: feuille-removebg-preview_5
+  - first:
+      213: -7715845410902028625
+    second: feuille-removebg-preview_6
+  - first:
+      213: 1223776728129642296
+    second: feuille-removebg-preview_7
+  - first:
+      213: 8731940929412771381
+    second: feuille-removebg-preview_8
+  - first:
+      213: -50587020956646905
+    second: feuille-removebg-preview_9
+  - first:
+      213: 4020968583822882352
+    second: feuille-removebg-preview_10
+  - first:
+      213: 8541144675190569488
+    second: feuille-removebg-preview_11
+  - first:
+      213: -8093596426245715685
+    second: feuille-removebg-preview_12
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: feuille-removebg-preview_0
+      rect:
+        serializedVersion: 2
+        x: 60
+        y: 351
+        width: 126
+        height: 93
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 367be263426895590800000000000000
+      internalID: -7684963799045064861
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: feuille-removebg-preview_1
+      rect:
+        serializedVersion: 2
+        x: 216
+        y: 353
+        width: 112
+        height: 92
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 74268486a20d5a8b0800000000000000
+      internalID: -5141474519016775097
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: feuille-removebg-preview_2
+      rect:
+        serializedVersion: 2
+        x: 360
+        y: 342
+        width: 82
+        height: 111
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 23df683f162cd75b0800000000000000
+      internalID: -5368921454802436814
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: feuille-removebg-preview_3
+      rect:
+        serializedVersion: 2
+        x: 61
+        y: 200
+        width: 110
+        height: 96
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 654c9906dec5550e0800000000000000
+      internalID: -2281815461595593642
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: feuille-removebg-preview_4
+      rect:
+        serializedVersion: 2
+        x: 206
+        y: 200
+        width: 110
+        height: 91
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 48239305fe9feb0b0800000000000000
+      internalID: -5710852471220784508
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: feuille-removebg-preview_5
+      rect:
+        serializedVersion: 2
+        x: 332
+        y: 196
+        width: 123
+        height: 115
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 39fed05759b0d2690800000000000000
+      internalID: -7625425857526501485
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: feuille-removebg-preview_6
+      rect:
+        serializedVersion: 2
+        x: 6
+        y: 114
+        width: 10
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fae4b55aa7fcbe490800000000000000
+      internalID: -7715845410902028625
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: feuille-removebg-preview_7
+      rect:
+        serializedVersion: 2
+        x: 6
+        y: 66
+        width: 10
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 83f9e8c437abbf010800000000000000
+      internalID: 1223776728129642296
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: feuille-removebg-preview_8
+      rect:
+        serializedVersion: 2
+        x: 49
+        y: 58
+        width: 112
+        height: 91
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 53ea751f2061e2970800000000000000
+      internalID: 8731940929412771381
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: feuille-removebg-preview_9
+      rect:
+        serializedVersion: 2
+        x: 175
+        y: 53
+        width: 83
+        height: 106
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 70242a95f574c4ff0800000000000000
+      internalID: -50587020956646905
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: feuille-removebg-preview_10
+      rect:
+        serializedVersion: 2
+        x: 269
+        y: 51
+        width: 88
+        height: 109
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 036b4cb7f995dc730800000000000000
+      internalID: 4020968583822882352
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: feuille-removebg-preview_11
+      rect:
+        serializedVersion: 2
+        x: 372
+        y: 58
+        width: 90
+        height: 91
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 01af3f344dd388670800000000000000
+      internalID: 8541144675190569488
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: feuille-removebg-preview_12
+      rect:
+        serializedVersion: 2
+        x: 6
+        y: 6
+        width: 12
+        height: 61
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b19c04a9ee4cdaf80800000000000000
+      internalID: -8093596426245715685
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      feuille-removebg-preview_0: -7684963799045064861
+      feuille-removebg-preview_1: -5141474519016775097
+      feuille-removebg-preview_10: 4020968583822882352
+      feuille-removebg-preview_11: 8541144675190569488
+      feuille-removebg-preview_12: -8093596426245715685
+      feuille-removebg-preview_2: -5368921454802436814
+      feuille-removebg-preview_3: -2281815461595593642
+      feuille-removebg-preview_4: -5710852471220784508
+      feuille-removebg-preview_5: -7625425857526501485
+      feuille-removebg-preview_6: -7715845410902028625
+      feuille-removebg-preview_7: 1223776728129642296
+      feuille-removebg-preview_8: 8731940929412771381
+      feuille-removebg-preview_9: -50587020956646905
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

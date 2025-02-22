@@ -6,9 +6,11 @@ using UnityEngine.SceneManagement;
 
 public class UIManager : MonoBehaviour
 {
+    //gestion de l'interface utilisateur (UI) (énergie, % d'évolution, pause, fin de partie)
     public TextMeshProUGUI txtenergy;
     public Image INpercent;
-    public MapManager mapManager;
+    //public MapManager mapManager;
+    //public GameManager gamemanager;
     public GameObject PauseCanvas;
     public GameObject LostCanvas;
     public TextMeshProUGUI scoreText;
@@ -24,8 +26,8 @@ public class UIManager : MonoBehaviour
 
     void Update()
     {
-        txtenergy.text = "Energy: " + mapManager.GetEnergy().ToString();
-        score = mapManager.GetEvolutionPercentage();
+        txtenergy.text = ": " + InfoManager.Instance.GetEnergy().ToString();
+        score = InfoManager.Instance.GetEvolutionPercentage();
         INpercent.fillAmount = (score / maxScore);
         if (Input.GetKeyDown(KeyCode.Escape))
         {
@@ -66,7 +68,8 @@ public class UIManager : MonoBehaviour
         if (LostCanvas != null)
         {
             LostCanvas.SetActive(true);
-            scoreText.text = "Score: " + mapManager.GetEvolutionPercentage().ToString() + "%";
+            int scoreint = Mathf.RoundToInt(InfoManager.Instance.GetEvolutionPercentage());
+            scoreText.text = "Score: " + scoreint.ToString() + "%";
             ispause = true;
         }
     }

@@ -5,9 +5,11 @@ using UnityEngine.Tilemaps;
 
 public class AnimalsManager : MonoBehaviour
 {
+    // gestion des animaux (spawn, déplacement, despawn)
+    
+    //public GameManager gameManager;
+
     public List<GameObject> animalPrefab;
-    public ZoneManager zoneManager;
-    public MapManager mapManager;
     public Tilemap tilemap;
     public Transform animalsContainer;
     public float moveSpeed = 2f;
@@ -16,10 +18,11 @@ public class AnimalsManager : MonoBehaviour
 
     public void SpawnAnimalInZone(DynamicZone zone, int idanimal)
     {
+        // spawn l'animal avec le id spécifié dans la zone spécifiée
         if (zone == null || zone.positions == null || zone.positions.Count == 0)
             return;
 
-        mapManager.AddEnergy(20);
+        InfoManager.Instance.AddEnergy(20);
         Vector3Int spawnPos = zone.positions[Random.Range(0, zone.positions.Count)];
         Vector3 newspawnPos = tilemap.GetCellCenterWorld(spawnPos);
         newspawnPos.z = 1;
@@ -38,6 +41,7 @@ public class AnimalsManager : MonoBehaviour
 
     private IEnumerator AnimalBehaviorCycle(GameObject animal, DynamicZone zone)
     {
+        // cycle de déplacement de l'animal (ildle, marche random...)
         while (animal != null)
         {
             Animator animalAnimator = animal.GetComponent<Animator>();
@@ -87,12 +91,25 @@ public class AnimalsManager : MonoBehaviour
         return randomWorldPos;
     }
 
-    public void DeleteAnimalInZone()
+    public void DespawnAnimals(DynamicZone zone)
     {
-        foreach (Transform child in animalsContainer)
+        // Supprime tous les animaux dans la zone spécifiée
+        List<(GameObject animal, DynamicZone zone)> animalsToRemove = new List<(GameObject animal, DynamicZone zone)>();
+
+        foreach (var (animal, animalZone) in spawnedAnimals)
         {
-            Destroy(child.gameObject);
+            if (animalZone == zone)
+            {
+                Destroy(animal);
+                animalsToRemove.Add((animal, animalZone));
+            }
         }
-        spawnedAnimals.Clear();
+
+        foreach (var animal in animalsToRemove)
+        {
+            spawnedAnimals.Remove(animal);
+        }
+
+        //Debug.Log($"All animals in zone {zone.name} have been removed.");
     }
 }
