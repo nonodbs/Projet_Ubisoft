@@ -22,7 +22,7 @@ public class AnimalsManager : MonoBehaviour
         if (zone == null || zone.positions == null || zone.positions.Count == 0)
             return;
 
-        InfoManager.Instance.AddEnergy(20);
+        InfoManager.Instance.AddEnergy(20 * idanimal);
         Vector3Int spawnPos = zone.positions[Random.Range(0, zone.positions.Count)];
         Vector3 newspawnPos = tilemap.GetCellCenterWorld(spawnPos);
         newspawnPos.z = 1;

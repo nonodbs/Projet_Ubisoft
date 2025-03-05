@@ -10,6 +10,16 @@ public class MapManager : MonoBehaviour
     public float noiseScale = 0.1f;
     public int seed;
 
+    [Header("Height Thresholds")]
+    public float waterThreshold = 0.1f;
+    public float swampThreshold = 0.2f;
+    public float landThreshold = 0.6f;
+    public float forestThreshold = 0.7f;
+
+    [Header("River Generation")]
+    public int minRivers = 1;
+    public int maxRivers = 3;
+
     void Start()
     {
         GenerateMap();
@@ -30,19 +40,19 @@ public class MapManager : MonoBehaviour
                 Vector3Int position = new Vector3Int(x, y, 0);
                 float heightValue = noiseMap[x, y];
 
-                if (heightValue < 0.1f)
+                if (heightValue < waterThreshold)
                 {
                     tilesManager.SetTileToWater(position);
                 }
-                else if (heightValue < 0.2f)
+                else if (heightValue < swampThreshold)
                 {
                     tilesManager.SetTileToSwamp(position);
                 }
-                else if (heightValue < 0.6f)
+                else if (heightValue < landThreshold)
                 {
                     tilesManager.SetTileToLand(position);
                 }
-                else if (heightValue < 0.7f)
+                else if (heightValue < forestThreshold)
                 {
                     tilesManager.SetTileToForest(position);
                 }
@@ -84,7 +94,7 @@ public class MapManager : MonoBehaviour
         int width = PlayerPrefs.GetInt("Width", 20);
 
         // Générer des rivières
-        int numberOfRivers = Random.Range(1, 3);
+        int numberOfRivers = Random.Range(minRivers, maxRivers);
         for (int i = 0; i < numberOfRivers; i++)
         {
             Vector3Int start = new Vector3Int(Random.Range(0, width), Random.Range(0, height), 0);
@@ -155,19 +165,8 @@ public class MapManager : MonoBehaviour
     void SetSwampAroundWater(Vector3Int position)
     {
         // Mettre des marais autour de l'eau
-        Vector3Int[] directions = new Vector3Int[]
-        {
-            new Vector3Int(1, 0, 0),
-            new Vector3Int(-1, 0, 0),
-            new Vector3Int(0, 1, 0),
-            new Vector3Int(0, -1, 0),
-            new Vector3Int(2, 0, 0),
-            new Vector3Int(-2, 0, 0),
-            new Vector3Int(0, 2, 0),
-            new Vector3Int(0, -2, 0)
-        };
 
-        foreach (Vector3Int direction in directions)
+        foreach (Vector3Int direction in InfoManager.directions)
         {
             Vector3Int neighborPos = position + direction;
             if ((!InfoManager.Instance.mapState.ContainsKey(neighborPos) || InfoManager.Instance.mapState[neighborPos].type != TileType.Water))

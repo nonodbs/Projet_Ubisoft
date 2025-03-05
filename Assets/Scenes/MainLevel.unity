@@ -405,8 +405,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   zoneManager: {fileID: 1609519320}
   tilesManager: {fileID: 1465924274}
-  gameManager: {fileID: 0}
+  gameManager: {fileID: 1514882706}
   evolutionInterval: 10
+  evolutionRulesData:
+  - {fileID: 11400000, guid: 5557f53e2485be443a78ba7f9c45e7c3, type: 2}
+  - {fileID: 11400000, guid: a12b13f8a7f81094b95125b42bc8718d, type: 2}
+  - {fileID: 11400000, guid: 9e87188eb48eee142a64e1b84d693798, type: 2}
+  - {fileID: 11400000, guid: f25532ce9eebf5c4a93de8e6f9dcf082, type: 2}
+  - {fileID: 11400000, guid: ca00f9f9a1638684284ecdd34f77db42, type: 2}
+  - {fileID: 11400000, guid: dc049870faf90be4ea71da416cdbb3c9, type: 2}
+  - {fileID: 11400000, guid: c28cfd6134f76634da78afa3b2258c47, type: 2}
+  - {fileID: 11400000, guid: f3feded4d7771d24884a12e629780e9f, type: 2}
+  - {fileID: 11400000, guid: 556e1de6273514f4d995dd712bd2ee55, type: 2}
+  - {fileID: 11400000, guid: daf86d39103b8374e8a0cae96e28494a, type: 2}
 --- !u!4 &130916048
 Transform:
   m_ObjectHideFlags: 0
@@ -459,6 +470,7 @@ Transform:
   - {fileID: 1086214078}
   - {fileID: 1971097699}
   - {fileID: 1514882705}
+  - {fileID: 482687973}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &182911711
@@ -971,6 +983,12 @@ MonoBehaviour:
   tilesManager: {fileID: 1465924274}
   noiseScale: 0.1
   seed: 0
+  waterThreshold: 0.1
+  swampThreshold: 0.2
+  landThreshold: 0.6
+  forestThreshold: 0.7
+  minRivers: 1
+  maxRivers: 3
 --- !u!1 &368869892
 GameObject:
   m_ObjectHideFlags: 0
@@ -1107,6 +1125,59 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 368869892}
   m_CullTransparentMesh: 1
+--- !u!1 &482687972
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 482687973}
+  - component: {fileID: 482687974}
+  m_Layer: 0
+  m_Name: MapManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &482687973
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 482687972}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 167732969}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &482687974
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 482687972}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bc70d9b74d4f33640a383d2d032181fa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tilesManager: {fileID: 1465924274}
+  noiseScale: 0.1
+  seed: 0
+  waterThreshold: 0.1
+  swampThreshold: 0.2
+  landThreshold: 0.6
+  forestThreshold: 0.7
+  minRivers: 1
+  maxRivers: 3
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -1636,7 +1707,6 @@ MonoBehaviour:
   - {fileID: 3872383065616262349, guid: 5ec5ca27712e42e4e8857e175f2aabb2, type: 3}
   - {fileID: 7191822214507505954, guid: 27e8f12b23dffd5449a375e6039bea8a, type: 3}
   - {fileID: 8820880274428771552, guid: 0c0ab216899069242a7318fcbe9d683d, type: 3}
-  gameManager: {fileID: 1514882706}
   tilemap: {fileID: 267286707}
   animalsContainer: {fileID: 190783787}
   moveSpeed: 2
@@ -2337,8 +2407,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   txtenergy: {fileID: 182911713}
   INpercent: {fileID: 1409596093}
-  mapManager: {fileID: 352925536}
-  gamemanager: {fileID: 1514882706}
   PauseCanvas: {fileID: 73479337}
   LostCanvas: {fileID: 939331076}
   scoreText: {fileID: 922341316}
@@ -3315,9 +3383,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6c16dc20c8da9f34a9aa17b152d9d130, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Inputheight: {fileID: 0}
-  Inputwidth: {fileID: 0}
+  inputHeight: {fileID: 0}
+  inputWidth: {fileID: 0}
   difficultyDropdown: {fileID: 0}
+  difficultySettingsList:
+  - difficultyName: easy
+    baseEnergy: 100
+  - difficultyName: normal
+    baseEnergy: 70
+  - difficultyName: hard
+    baseEnergy: 50
+  - difficultyName: peacefull
+    baseEnergy: 0
 --- !u!1 &1609519319
 GameObject:
   m_ObjectHideFlags: 0

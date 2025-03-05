@@ -13,6 +13,19 @@ public class InfoManager : MonoBehaviour
 
     public Tilemap tilemap;
     public UIManager uimanager;
+
+    public static Vector3Int[] directions = new Vector3Int[]
+    {
+        new Vector3Int(1, 0, 0),
+        new Vector3Int(-1, 0, 0),
+        new Vector3Int(0, 1, 0),
+        new Vector3Int(0, -1, 0),
+        new Vector3Int(1, 1, 0),
+        new Vector3Int(-1, -1, 0),
+        new Vector3Int(1, -1, 0),
+        new Vector3Int(-1, 1, 0)
+    };
+
     private void Awake()
     {
         if (Instance == null)
@@ -44,6 +57,22 @@ public class InfoManager : MonoBehaviour
     public bool Ispeaceful()
     {
         return PlayerPrefs.GetString("Difficulty", "peaceful") == "peaceful";
+    }
+
+    public float GetEvolutionInterval()
+    {
+        string difficulty = GetDifficulty();
+        switch (difficulty)
+        {
+            case "easy":
+                return 30f;
+            case "medium":
+                return 45f;
+            case "hard":
+                return 60f;
+            default:
+                return 30f; // Intervalle par défaut
+        }
     }
 
     public void AddEnergy(int amount)

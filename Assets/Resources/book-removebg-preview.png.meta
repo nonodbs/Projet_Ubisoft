@@ -1,13 +1,10 @@
 fileFormatVersion: 2
-guid: 70387beaf46085a469bc83183d4582b6
+guid: 6eba4726bc5070e40b241a8f53f05d7e
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 125365368406324421
-    second: livre-removebg-preview_0
-  - first:
-      213: -2286392204301288138
-    second: livre-removebg-preview_1
+      213: -367219078638259364
+    second: book-removebg-preview_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -40,7 +37,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -78,7 +75,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -116,13 +113,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: livre-removebg-preview_0
+      name: book-removebg-preview_0
       rect:
         serializedVersion: 2
-        x: 53
-        y: 174
-        width: 150
-        height: 156
+        x: 50
+        y: 22
+        width: 482
+        height: 357
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -131,30 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 5c4befa63236db100800000000000000
-      internalID: 125365368406324421
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: livre-removebg-preview_1
-      rect:
-        serializedVersion: 2
-        x: 236
-        y: 170
-        width: 211
-        height: 156
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 63d366d676a1540e0800000000000000
-      internalID: -2286392204301288138
+      spriteID: c53350f813067eaf0800000000000000
+      internalID: -367219078638259364
       vertices: []
       indices: 
       edges: []
@@ -173,8 +148,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      livre-removebg-preview_0: 125365368406324421
-      livre-removebg-preview_1: -2286392204301288138
+      book-removebg-preview_0: -367219078638259364
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

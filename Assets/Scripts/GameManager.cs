@@ -5,6 +5,14 @@ using UnityEngine.UI;
 using TMPro;
 using CellStateSpace;
 
+
+[System.Serializable]
+public class DifficultySettings
+{
+    public string difficultyName;
+    public int baseEnergy;
+}
+
 public class GameManager : MonoBehaviour
 {
     // gestion des paramètres de la partie
@@ -16,12 +24,22 @@ public class GameManager : MonoBehaviour
     [SerializeField]
     public TMP_Dropdown difficultyDropdown;
 
+    [SerializeField]
+    public List<DifficultySettings> difficultySettingsList;
+
     private int height;
     private int width;
     private string difficulty;
 
+    public GameObject rulesMenu;
+    public Button rulesButton;
+    public Button closeButton;
+
     public void StartLevel()
     {
+        rulesMenu.SetActive(false);
+        rulesButton.onClick.AddListener(OpenRulesMenu);
+        closeButton.onClick.AddListener(CloseRulesMenu);
         if (!int.TryParse(inputHeight.text, out height) || height < 20 || height > 100)
         {
             height = 20;
@@ -36,23 +54,22 @@ public class GameManager : MonoBehaviour
         PlayerPrefs.SetInt("Width", width);
         difficulty = difficultyDropdown.options[difficultyDropdown.value].text;
         PlayerPrefs.SetString("Difficulty", difficulty);
-        if (difficulty == "peaceful")
-        {
-            PlayerPrefs.SetInt("Energy", 0);
-        }
-        else if (difficulty == "easy")
-        {
-            PlayerPrefs.SetInt("Energy", 120);
-        }
-        else if (difficulty == "normal")
-        {
-            PlayerPrefs.SetInt("Energy", 80);
-        }
-        else if (difficulty == "hard")
-        {
-            PlayerPrefs.SetInt("Energy", 50);
-        }
+
+        int baseEnergy = GetBaseEnergyForDifficulty(difficulty);
+        PlayerPrefs.SetInt("Energy", baseEnergy);
         SceneManager.LoadScene("MainLevel");
+    }
+
+    private int GetBaseEnergyForDifficulty(string difficulty)
+    {
+        foreach (var set in difficultySettingsList)
+        {
+            if (set.difficultyName == difficulty)
+            {
+                return set.baseEnergy;
+            }
+        }
+        return 0; // Valeur par défaut si la difficulté n'est pas trouvée
     }
 
     public void QuitGame()
@@ -86,6 +103,16 @@ public class GameManager : MonoBehaviour
         {
             Debug.LogWarning("Valeur invalide saisie !");
         }
+    }
+
+    public void OpenRulesMenu()
+    {
+        rulesMenu.SetActive(true);
+    }
+
+    public void CloseRulesMenu()
+    {
+        rulesMenu.SetActive(false);
     }
 
     public int Getheight()

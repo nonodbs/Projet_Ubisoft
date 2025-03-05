@@ -29,17 +29,6 @@ public class ZoneManager : MonoBehaviour
     private Dictionary<Vector3Int, DynamicZone> tileToZoneMap = new Dictionary<Vector3Int, DynamicZone>();
     public List<DynamicZone> zones = new List<DynamicZone>();
 
-    private static readonly Vector3Int[] directions = {
-        new Vector3Int(1, 0, 0),
-        new Vector3Int(-1, 0, 0),
-        new Vector3Int(0, 1, 0),
-        new Vector3Int(0, -1, 0),
-        new Vector3Int(1, 1, 0),
-        new Vector3Int(-1, -1, 0),
-        new Vector3Int(1, -1, 0),
-        new Vector3Int(-1, 1, 0)
-    };
-
     public List<DynamicZone> GetZones()
     {
         return zones;
@@ -148,7 +137,7 @@ public class ZoneManager : MonoBehaviour
         }
 
         List<DynamicZone> adjacentZones = new List<DynamicZone>();
-        foreach (var direction in directions)
+        foreach (var direction in InfoManager.directions)
         {
             Vector3Int adjacentPos = pos + direction;
             if (!InfoManager.Instance.mapState.ContainsKey(adjacentPos))
