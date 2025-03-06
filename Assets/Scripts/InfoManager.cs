@@ -14,6 +14,10 @@ public class InfoManager : MonoBehaviour
     public Tilemap tilemap;
     public UIManager uimanager;
 
+    public List<GameObject> animalInGame;
+
+    public List<GameObject> animalPrefab;
+
     public static Vector3Int[] directions = new Vector3Int[]
     {
         new Vector3Int(1, 0, 0),

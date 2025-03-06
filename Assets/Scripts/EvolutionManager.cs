@@ -121,7 +121,20 @@ public class EvolutionManager : MonoBehaviour
             state.evol = rule.NewEvol;
             stTilemap.SetTile(pos, tilesManager.GetTileFromEvolution(rule.NewType, rule.NewEvol));
             zoneManager.UpdateZone(pos, state);
-            Debug.Log($"Tile at {pos} evolved to {rule.NewType} {rule.NewEvol}");
+            int energyToAdd = 0;
+            switch (InfoManager.Instance.GetDifficulty())
+            {   
+                case "easy":
+                    energyToAdd = 10;
+                    break;
+                case "medium":
+                    energyToAdd = 5;
+                    break;
+                case "hard":
+                    energyToAdd = 1;
+                    break;
+            }
+            InfoManager.Instance.AddEnergy(energyToAdd);
         }
     }
 

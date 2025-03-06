@@ -13,8 +13,11 @@ public class UIManager : MonoBehaviour
     //public GameManager gamemanager;
     public GameObject PauseCanvas;
     public GameObject LostCanvas;
+    public GameObject WinCanvas;
+    public GameObject AllespeceCanvas;
     public TextMeshProUGUI scoreText;
     public bool ispause = false;
+    public bool haveall = false;
 
     private float score;
     private float maxScore = 100;
@@ -37,6 +40,19 @@ public class UIManager : MonoBehaviour
                 ispause = true;
             }
         }
+        if(InfoManager.Instance.animalInGame.Count == InfoManager.Instance.animalPrefab.Count && !haveall)
+        {
+            if (AllespeceCanvas != null)
+            {
+                AllespeceCanvas.SetActive(!AllespeceCanvas.activeSelf);
+                ispause = true;
+                haveall = true;
+            }
+        }
+        else if (score >= maxScore)
+        {
+            win();
+        }
     }
 
     public void Replay()
@@ -44,6 +60,15 @@ public class UIManager : MonoBehaviour
         if (PauseCanvas != null)
         {
             PauseCanvas.SetActive(!PauseCanvas.activeSelf);
+            ispause = false;
+        }
+    }
+
+    public void continue_game()
+    {
+        if (AllespeceCanvas != null)
+        {
+            AllespeceCanvas.SetActive(!AllespeceCanvas.activeSelf);
             ispause = false;
         }
     }
@@ -65,6 +90,10 @@ public class UIManager : MonoBehaviour
 
     public void lost()
     {
+        if(ispause)
+        {
+            return;
+        }
         if (LostCanvas != null)
         {
             LostCanvas.SetActive(true);
@@ -73,4 +102,16 @@ public class UIManager : MonoBehaviour
             ispause = true;
         }
     }
+
+    public void win()
+    {
+        if (WinCanvas != null)
+        {
+            WinCanvas.SetActive(true);
+            int scoreint = Mathf.RoundToInt(InfoManager.Instance.GetEvolutionPercentage());
+            scoreText.text = "Score: " + scoreint.ToString() + "%";
+            ispause = true;
+        }
+    }
+    
 }

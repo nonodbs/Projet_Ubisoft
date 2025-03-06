@@ -9,7 +9,6 @@ public class AnimalsManager : MonoBehaviour
     
     //public GameManager gameManager;
 
-    public List<GameObject> animalPrefab;
     public Tilemap tilemap;
     public Transform animalsContainer;
     public float moveSpeed = 2f;
@@ -27,8 +26,14 @@ public class AnimalsManager : MonoBehaviour
         Vector3 newspawnPos = tilemap.GetCellCenterWorld(spawnPos);
         newspawnPos.z = 1;
 
-        GameObject animal = Instantiate(animalPrefab[idanimal], newspawnPos, Quaternion.identity, animalsContainer);
+        GameObject animal = Instantiate(InfoManager.Instance.animalPrefab[idanimal], newspawnPos, Quaternion.identity, animalsContainer);
         spawnedAnimals.Add((animal, zone));
+
+        if (!InfoManager.Instance.animalInGame.Contains(InfoManager.Instance.animalPrefab[idanimal]))
+        {
+           //Debug.Log("Animal added to list: " + InfoManager.Instance.animalPrefab[idanimal].name);
+            InfoManager.Instance.animalInGame.Add(InfoManager.Instance.animalPrefab[idanimal]);
+        }
 
         Animator animalAnimator = animal.GetComponent<Animator>();
         if (animalAnimator != null)
@@ -85,6 +90,11 @@ public class AnimalsManager : MonoBehaviour
 
     private Vector3 GetRandomPositionInZone(DynamicZone zone)
     {
+        if (zone.positions == null || zone.positions.Count == 0)
+        {
+            Debug.LogWarning("La zone ne contient aucune position.");
+            return Vector3.zero;
+        }
         Vector3Int randomTile = zone.positions[Random.Range(0, zone.positions.Count)];
         Vector3 randomWorldPos = tilemap.GetCellCenterWorld(randomTile);
         randomWorldPos.z = 1;
@@ -108,6 +118,26 @@ public class AnimalsManager : MonoBehaviour
         foreach (var animal in animalsToRemove)
         {
             spawnedAnimals.Remove(animal);
+        }
+
+
+        foreach (var animalPrefab in InfoManager.Instance.animalPrefab)
+        {
+            bool speciesStillPresent = false;
+            foreach (var (animal, animalZone) in spawnedAnimals)
+            {
+                if (animalPrefab.name == animal.name.Replace("(Clone)", "").Trim())
+                {
+                    speciesStillPresent = true;
+                    break;
+                }
+            }
+
+            if (!speciesStillPresent)
+            {
+                //Debug.Log("Animal removed from list: " + animalPrefab.name);
+                InfoManager.Instance.animalInGame.Remove(animalPrefab);
+            }
         }
 
         //Debug.Log($"All animals in zone {zone.name} have been removed.");
