@@ -16,7 +16,7 @@ Inspirations :
 ________________________________________________________________________________
 
 Comment jouer :
-- télécharger le dossier V1 (au complet), et lancer l'application "Mygame"
+- télécharger le dossier V2 (au complet), et lancer l'application "Evolys"
 - bouton gauche de la souris : cliquer sur les boutons, sélection des cases, désélection des cases
 - espace (clic court) : fait évoluer les cases sélectionnées
 - espace (clic long) : change les cases sélectionnées en eau
@@ -50,15 +50,22 @@ Version 1 :
 
 ________________________________________________________________________________
 
-Évolutions future :
--	Génération procédurale
--	Système de vie « autonome » de l’écosystème (jeu de la vie)
--	Rajout d'animaux variés
--	Amélioration de la caméra
+Version 2 :
+-	Génération procédurale simple
+-	Système de vie « autonome » de l’écosystème (jeu de la vie) grâce à des règles
+-	Rajout de quelques animaux (4 au total)
 -	Amélioration des esthétiques des menus, fond..
--	Rajout de son
+
+[[Regarder la vidéo]](https://youtu.be/TyY3sIwCUVc)
+
+________________________________________________________________________________
 
 Évolutions possibles :
+-	Amélioration de la caméra
+-	Ajout de règles d'évolutions
+-	Ajout de nouveaux types de tiles
+-	Ajout d'espèces et de type d'animaux (mâle, femelle, bébé...)
+-	Rajout de son
 - Mise en place d'intempéries
 -	Système de sauvegarde des maps
 -	Bouton retour en arrière de l’action réalisée
