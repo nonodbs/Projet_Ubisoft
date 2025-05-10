@@ -1,4 +1,4 @@
-# Projet_Ubisoft
+# Evolys
 
 Idée principale :
 Un jeu de gestion stratégique en vision isométrique basé sur l’évolution d’un écosystème. Un jeu calme sans ennemis ni PVP.
@@ -40,8 +40,6 @@ Version 1 :
 -	Mise en place de la sélection de cases
 -	UI (avec gestion de la ressource et % de réussite)
 -	Mise en place du bouton pour évoluer les cases
--	Gestion des zones
--	Spawn des animaux, et déplacement
 -	Menu (Début, pause, fin)
 -	Gestion simple de la caméra
 -	Création de l'esthétique des cases
@@ -53,7 +51,8 @@ ________________________________________________________________________________
 Version 2 :
 -	Génération procédurale simple
 -	Système de vie « autonome » de l’écosystème (jeu de la vie) grâce à des règles
--	Rajout de quelques animaux (4 au total)
+-	Gestion des zones
+-	Spawn des animaux, et déplacement
 -	Amélioration des esthétiques des menus, fond..
 
 [[Regarder la vidéo]](https://youtu.be/TyY3sIwCUVc)
